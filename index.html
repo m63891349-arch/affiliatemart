@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AffiliateMart - Best Deals & Products</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="#" class="logo">AffiliateMart</a>
+            </div>
+            <div class="nav-menu" id="nav-menu">
+                <a href="#" class="nav-link active" data-page="home">Home</a>
+                <a href="#" class="nav-link" data-page="categories">Categories</a>
+                <a href="#" class="nav-link" data-page="deals">Deals</a>
+                <a href="#" class="nav-link">About</a>
+                <a href="#" class="nav-link">Contact</a>
+            </div>
+            <div class="nav-search">
+                <input type="text" id="search-input" placeholder="Search products...">
+                <i class="fas fa-search search-icon"></i>
+            </div>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-content">
+            <h1>Discover Amazing Deals</h1>
+            <p>Find the best products from top stores with exclusive affiliate discounts</p>
+            <div class="hero-search">
+                <input type="text" id="hero-search" placeholder="Search for products...">
+                <button onclick="searchProducts()"><i class="fas fa-search"></i> Search</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Featured Products -->
+        <section class="section featured" id="featured">
+            <h2 class="section-title">Featured Products</h2>
+            <div class="category-filter">
+                <button class="filter-btn active" data-category="all">All</button>
+                <button class="filter-btn" data-category="electronics">Electronics</button>
+                <button class="filter-btn" data-category="fashion">Fashion</button>
+                <button class="filter-btn" data-category="fitness">Fitness</button>
+                <button class="filter-btn" data-category="home">Home & Kitchen</button>
+                <button class="filter-btn" data-category="gadgets">Gadgets</button>
+            </div>
+            <div class="products-grid" id="products-grid">
+                <!-- Products will be loaded here -->
+            </div>
+        </section>
+
+        <!-- Categories Section -->
+        <section class="section categories" id="categories">
+            <h2 class="section-title">Shop by Category</h2>
+            <div class="categories-grid">
+                <div class="category-card" data-category="electronics">
+                    <i class="fas fa-laptop"></i>
+                    <h3>Electronics</h3>
+                </div>
+                <div class="category-card" data-category="fashion">
+                    <i class="fas fa-tshirt"></i>
+                    <h3>Fashion</h3>
+                </div>
+                <div class="category-card" data-category="fitness">
+                    <i class="fas fa-dumbbell"></i>
+                    <h3>Fitness</h3>
+                </div>
+                <div class="category-card" data-category="home">
+                    <i class="fas fa-home"></i>
+                    <h3>Home & Kitchen</h3>
+                </div>
+                <div class="category-card" data-category="gadgets">
+                    <i class="fas fa-mobile-alt"></i>
+                    <h3>Gadgets</h3>
+                </div>
+            </div>
+        </section>
+
+        <!-- Trending Deals -->
+        <section class="section deals" id="deals">
+            <h2 class="section-title">Trending Deals</h2>
+            <div class="deals-grid" id="deals-grid">
+                <!-- Deals will be loaded here -->
+            </div>
+        </section>
+    </main>
+
+    <!-- Product Detail Modal -->
+    <div class="modal" id="product-modal">
+        <div class="modal-content">
+            <span class="close" id="close-modal">&times;</span>
+            <div class="product-detail">
+                <div class="product-images">
+                    <img id="modal-main-image" src="" alt="">
+                </div>
+                <div class="product-info">
+                    <h2 id="modal-title"></h2>
+                    <p id="modal-description"></p>
+                    <div class="price-comparison">
+                        <div class="price-item amazon">
+                            <i class="fab fa-amazon"></i>
+                            <span id="modal-amazon-price"></span>
+                            <a id="amazon-link" href="#" class="buy-btn amazon-btn" target="_blank">Buy on Amazon</a>
+                        </div>
+                        <div class="price-item flipkart">
+                            <i class="fab fa-flipkart"></i>
+                            <span id="modal-flipkart-price"></span>
+                            <a id="flipkart-link" href="#" class="buy-btn flipkart-btn" target="_blank">Buy on Flipkart</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>AffiliateMart</h3>
+                <p>We connect you with the best deals from top affiliate partners.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">Affiliate Disclosure</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Affiliate Disclosure</h4>
+                <p>We earn a commission from purchases made through our links at no extra cost to you. Thank you for your support!</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 AffiliateMart. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+  </html>
